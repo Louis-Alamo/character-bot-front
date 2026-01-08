@@ -1,0 +1,104 @@
+<div class="demo-container">
+  <h1>Button Component Demo</h1>
+
+  <section class="button-section">
+    <h2>Primary Buttons</h2>
+    <div class="button-group">
+      <app-button label="Guardar Personaje" variant="primary"></app-button>
+      <app-button label="Continuar" variant="primary" [disabled]="true"></app-button>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <h2>Buttons with Icons - Dynamic Position (START)</h2>
+    <div class="button-group">
+      <app-button label="Anterior" variant="secondary" iconPosition="start">
+        <svg slot="start" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12H7"/><path d="m13 6-6 6 6 6"/>
+        </svg>
+      </app-button>
+      <app-button label="Inicio" variant="info" iconPosition="start">
+        <svg slot="start" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </app-button>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <h2>Buttons with Icons - Dynamic Position (END)</h2>
+    <div class="button-group">
+      <app-button label="Siguiente" variant="primary" iconPosition="end">
+        <svg slot="end" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 12H3"/><path d="m11 18 6-6-6-6"/><path d="M21 5v14"/>
+        </svg>
+      </app-button>
+      <app-button label="Ir" variant="success" iconPosition="end">
+        <svg slot="end" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 12H3"/><path d="m11 18 6-6-6-6"/><path d="M21 5v14"/>
+        </svg>
+      </app-button>
+      <app-button label="Enviar" variant="info" iconPosition="end">
+        <svg slot="end" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 12H3"/><path d="m11 18 6-6-6-6"/><path d="M21 5v14"/>
+        </svg>
+      </app-button>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <h2>Secondary Buttons</h2>
+    <div class="button-group">
+      <app-button label="Cancelar" variant="secondary"></app-button>
+      <app-button label="Cerrar" variant="secondary" [disabled]="true"></app-button>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <h2>Danger Buttons</h2>
+    <div class="button-group">
+      <app-button label="Eliminar" variant="danger"></app-button>
+      <app-button label="Borrar Todo" variant="danger" [disabled]="true"></app-button>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <h2>Warning Buttons</h2>
+    <div class="button-group">
+      <app-button label="Advertencia" variant="warning"></app-button>
+      <app-button label="Precaución" variant="warning" [disabled]="true"></app-button>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <h2>Info Buttons</h2>
+    <div class="button-group">
+      <app-button label="Más Información" variant="info"></app-button>
+      <app-button label="Detalles" variant="info" [disabled]="true"></app-button>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <h2>Success Buttons</h2>
+    <div class="button-group">
+      <app-button label="Completado" variant="success"></app-button>
+      <app-button label="Éxito" variant="success" [disabled]="true"></app-button>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <h2>Cancel Buttons</h2>
+    <div class="button-group">
+      <app-button label="Cancelar Operación" variant="cancel"></app-button>
+      <app-button label="Abortar" variant="cancel" [disabled]="true"></app-button>
+    </div>
+  </section>
+
+  <section class="button-section">
+    <h2>Submit Buttons</h2>
+    <div class="button-group">
+      <app-button label="Enviar" variant="submit" type="submit"></app-button>
+      <app-button label="Guardar y Continuar" variant="submit" [disabled]="true"></app-button>
+    </div>
+  </section>
+</div>
