@@ -1,0 +1,27 @@
+<button
+  [ngClass]="['btn', 'btn-' + variant]"
+  [type]="type"
+  [disabled]="disabled"
+  (click)="onClick()"
+>
+  <!-- Icon/Content at START -->
+  @if (iconPosition === 'start') {
+    @if (icon) {
+      <i [class]="icon"></i>
+    }
+    <ng-content select="[slot='start']"></ng-content>
+  }
+
+  <span class="btn-label">{{ label }}</span>
+
+  <!-- Icon/Content at END -->
+  @if (iconPosition === 'end') {
+    @if (icon) {
+      <i [class]="icon"></i>
+    }
+    <ng-content select="[slot='end']"></ng-content>
+  }
+
+  <!-- Default content (no slot specified) - always at the end for backward compatibility -->
+  <ng-content></ng-content>
+</button>
