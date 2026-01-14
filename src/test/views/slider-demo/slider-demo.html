@@ -1,0 +1,144 @@
+<div class="demo-container">
+  <h1 class="demo-title">Slider Component Demo</h1>
+  <p class="demo-description">
+    Ejemplos de uso del componente Slider con diferentes configuraciones e íconos.
+  </p>
+
+  <div class="demo-section">
+    <h2 class="section-title">Slider con ícono SVG</h2>
+    <p class="section-description">Slider con temperatura usando ícono de Font Awesome</p>
+
+    <app-slider
+      label="Temperatura"
+      [value]="temperatura"
+      [min]="0"
+      [max]="1"
+      [step]="0.1"
+      textInit="Preciso"
+      textEnd="Creativo"
+      variant="primary"
+      icon="fas fa-temperature-half"
+      leyend="Valores más altos hacen que la IA sea más creativa e impredecible. Valores bajos la hacen más lógica y conservadora."
+      (valueChange)="onTemperaturaChange($event)"
+    ></app-slider>
+  </div>
+
+  <div class="demo-section">
+    <h2 class="section-title">Slider Primario</h2>
+    <p class="section-description">Slider básico con variante primary e ícono de clase</p>
+
+    <app-slider
+      label="Creatividad"
+      [value]="creatividad"
+      [min]="0"
+      [max]="100"
+      [step]="5"
+      textInit="Bajo"
+      textEnd="Alto"
+      variant="primary"
+      icon="fas fa-lightbulb"
+      leyend="Controla el nivel de creatividad en las respuestas generadas."
+      (valueChange)="onCreatividadChange($event)"
+    ></app-slider>
+  </div>
+
+  <div class="demo-section">
+    <h2 class="section-title">Slider Secundario</h2>
+    <p class="section-description">Slider con variante secondary</p>
+
+    <app-slider
+      label="Volumen"
+      [value]="volumen"
+      [min]="0"
+      [max]="100"
+      [step]="1"
+      textInit="Mute"
+      textEnd="Max"
+      variant="secondary"
+      icon="fas fa-volume-high"
+      leyend="Ajusta el volumen del sistema de audio."
+      (valueChange)="onVolumenChange($event)"
+    ></app-slider>
+  </div>
+
+  <div class="demo-section">
+    <h2 class="section-title">Slider sin Ícono</h2>
+    <p class="section-description">Slider sin ícono, solo texto</p>
+
+    <app-slider
+      label="Brillo"
+      [value]="brightness"
+      [min]="0"
+      [max]="100"
+      [step]="10"
+      textInit="Oscuro"
+      textEnd="Brillante"
+      variant="primary"
+      leyend="Ajusta el nivel de brillo de la pantalla."
+      (valueChange)="onBrightnessChange($event)"
+    ></app-slider>
+  </div>
+
+  <div class="demo-section">
+    <h2 class="section-title">Slider Deshabilitado</h2>
+    <p class="section-description">Slider en estado deshabilitado</p>
+
+    <app-slider
+      label="Precisión"
+      [value]="precision"
+      [min]="0"
+      [max]="1"
+      [step]="0.1"
+      textInit="Baja"
+      textEnd="Alta"
+      variant="primary"
+      icon="fas fa-crosshairs"
+      leyend="Este control está deshabilitado temporalmente."
+      [disabled]="true"
+    ></app-slider>
+  </div>
+
+  <div class="demo-section">
+    <h2 class="section-title">Slider sin Leyenda</h2>
+    <p class="section-description">Slider sin texto de ayuda</p>
+
+    <app-slider
+      label="Temperatura Simple"
+      [value]="temperatura"
+      [min]="0"
+      [max]="1"
+      [step]="0.1"
+      textInit="Min"
+      textEnd="Max"
+      variant="secondary"
+      icon="fas fa-thermometer"
+      (valueChange)="onTemperaturaChange($event)"
+    ></app-slider>
+  </div>
+
+  <div class="demo-values">
+    <h2 class="section-title">Valores Actuales</h2>
+    <div class="values-grid">
+      <div class="value-item">
+        <span class="value-label">Temperatura:</span>
+        <span class="value-number">{{ temperatura }}</span>
+      </div>
+      <div class="value-item">
+        <span class="value-label">Creatividad:</span>
+        <span class="value-number">{{ creatividad }}</span>
+      </div>
+      <div class="value-item">
+        <span class="value-label">Volumen:</span>
+        <span class="value-number">{{ volumen }}</span>
+      </div>
+      <div class="value-item">
+        <span class="value-label">Brillo:</span>
+        <span class="value-number">{{ brightness }}</span>
+      </div>
+      <div class="value-item">
+        <span class="value-label">Precisión:</span>
+        <span class="value-number">{{ precision }}</span>
+      </div>
+    </div>
+  </div>
+</div>

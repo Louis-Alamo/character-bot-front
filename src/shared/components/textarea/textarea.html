@@ -1,0 +1,21 @@
+<div [ngClass]="['textarea-wrapper', 'textarea-' + variant]">
+  @if (label) {
+    <label class="textarea-label">
+      {{ label }}
+      @if (leyend) {
+        <span class="textarea-legend">{{ leyend }}</span>
+      }
+    </label>
+  }
+
+  <div class="textarea-container">
+    <textarea
+      class="textarea-field"
+      [placeholder]="placeholder"
+      [disabled]="disabled"
+      [value]="value"
+      (input)="onChangeTextarea($event)"
+      [rows]="rows"
+    ></textarea>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="character-card" (click)="onCardClick()">
+  <div class="card-status" *ngIf="character.status === 'online'"></div>
+
+  <div class="card-image-container">
+    <img [src]="character.imageUrl || 'assets/default-bot.png'"
+         (error)="handleImageError($event)"
+         [alt]="character.name"
+         class="card-image">
+  </div>
+
+  <div class="card-content">
+    <h3 class="card-title">{{ character.name }}</h3>
+    <span class="card-role" *ngIf="character.role">{{ character.role }}</span>
+    <p class="card-description">{{ character.description }}</p>
+  </div>
+
+  <div class="card-footer">
+    <span class="model-tag">{{ character.model }}</span>
+  </div>
+</div>

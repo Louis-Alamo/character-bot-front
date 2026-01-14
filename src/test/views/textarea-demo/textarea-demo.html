@@ -1,0 +1,108 @@
+<div class="demo-container">
+  <h1>Textarea Component Demo</h1>
+
+  <section class="textarea-section">
+    <h2>Primary Variant - Basic Textareas</h2>
+    <div class="textarea-group">
+      <app-textarea
+        label="Mensaje de Bienvenida"
+        leyend="(Opcional)"
+        placeholder="¡Hola! ¿En qué lío te has metido hoy?"
+        variant="primary"
+        [(value)]="welcomeMessage">
+      </app-textarea>
+
+      <app-textarea
+        label="Descripción del personaje"
+        placeholder="Describe tu personaje aquí..."
+        variant="primary"
+        [rows]="6">
+      </app-textarea>
+
+      <app-textarea
+        label="Notas adicionales"
+        placeholder="Agrega cualquier información adicional"
+        variant="primary"
+        [rows]="3">
+      </app-textarea>
+    </div>
+  </section>
+
+  <section class="textarea-section">
+    <h2>Secondary Variant</h2>
+    <div class="textarea-group">
+      <app-textarea
+        label="Comentarios"
+        placeholder="Escribe tus comentarios aquí..."
+        variant="secondary"
+        [rows]="5">
+      </app-textarea>
+
+      <app-textarea
+        label="Biografía"
+        leyend="(Máximo 500 caracteres)"
+        placeholder="Cuéntanos sobre tu personaje..."
+        variant="secondary"
+        [rows]="8">
+      </app-textarea>
+    </div>
+  </section>
+
+  <section class="textarea-section">
+    <h2>Diferentes tamaños (rows)</h2>
+    <div class="textarea-group">
+      <app-textarea
+        label="Pequeño (2 filas)"
+        placeholder="Texto corto..."
+        variant="primary"
+        [rows]="2">
+      </app-textarea>
+
+      <app-textarea
+        label="Mediano (5 filas)"
+        placeholder="Texto mediano..."
+        variant="primary"
+        [rows]="5">
+      </app-textarea>
+
+      <app-textarea
+        label="Grande (10 filas)"
+        placeholder="Texto largo..."
+        variant="primary"
+        [rows]="10">
+      </app-textarea>
+    </div>
+  </section>
+
+  <section class="textarea-section">
+    <h2>Disabled State</h2>
+    <div class="textarea-group">
+      <app-textarea
+        label="Textarea deshabilitado"
+        placeholder="No editable"
+        variant="primary"
+        [disabled]="true"
+        [rows]="4">
+      </app-textarea>
+
+      <app-textarea
+        label="Con contenido deshabilitado"
+        value="Este es un contenido que no se puede editar."
+        variant="secondary"
+        [disabled]="true"
+        [rows]="3">
+      </app-textarea>
+    </div>
+  </section>
+
+  <section class="textarea-section">
+    <h2>Sin Label</h2>
+    <div class="textarea-group">
+      <app-textarea
+        placeholder="Textarea sin label..."
+        variant="primary"
+        [rows]="4">
+      </app-textarea>
+    </div>
+  </section>
+</div>

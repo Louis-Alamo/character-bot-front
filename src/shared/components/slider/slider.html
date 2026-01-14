@@ -1,0 +1,46 @@
+<div [ngClass]="['slider-wrapper', 'slider-' + variant]">
+  @if (label) {
+    <div class="slider-header">
+      <label class="slider-label">
+        @if (icon) {
+          <div class="slider-icon-container">
+            @if (isSvgIcon()) {
+              <img [src]="icon" alt="icon" class="slider-icon-img" />
+            } @else {
+              <i [class]="'slider-icon ' + icon"></i>
+            }
+          </div>
+        }
+        {{ label }}
+      </label>
+      <span class="slider-value">{{ value }}</span>
+    </div>
+  }
+
+  <div class="slider-container">
+    @if (textInit) {
+      <span class="slider-text slider-text-init">{{ textInit }}</span>
+    }
+
+    <div class="slider-track-wrapper">
+      <input
+        type="range"
+        class="slider-input"
+        [min]="min"
+        [max]="max"
+        [step]="step"
+        [value]="value"
+        [disabled]="disabled"
+        (input)="onChangeSlider($event)"
+      />
+    </div>
+
+    @if (textEnd) {
+      <span class="slider-text slider-text-end">{{ textEnd }}</span>
+    }
+  </div>
+
+  @if (leyend) {
+    <p class="slider-leyend">{{ leyend }}</p>
+  }
+</div>

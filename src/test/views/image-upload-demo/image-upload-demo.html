@@ -1,0 +1,15 @@
+<div class="demo-container">
+  <h2>Image Upload Demo</h2>
+  <div class="demo-section">
+    <app-image-upload (imageSelected)="onImageSelected($event)"></app-image-upload>
+  </div>
+
+  @if (lastSelectedFile) {
+    <div class="file-info">
+      <h3>Last Selected File:</h3>
+      <p>Name: {{ lastSelectedFile.name }}</p>
+      <p>Size: {{ (lastSelectedFile.size / 1024 / 1024).toFixed(2) }} MB</p>
+      <p>Type: {{ lastSelectedFile.type }}</p>
+    </div>
+  }
+</div>

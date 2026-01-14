@@ -1,0 +1,82 @@
+<div class="create-character-container">
+  <header class="create-header">
+    <h1>Creación de personaje</h1>
+  </header>
+
+  <div class="form-content">
+    <div class="form-section">
+      <app-image-upload (imageSelected)="onImageSelected($event)"></app-image-upload>
+    </div>
+
+    <div class="form-section">
+      <app-input
+        label="Nombre del personaje"
+        placeholder="Mario"
+        variant="primary"
+        [(value)]="name">
+      </app-input>
+    </div>
+
+    <div class="form-section">
+      <app-input
+        label="Descripción corta"
+        placeholder="El fontanero más famoso"
+        variant="primary"
+        [(value)]="description">
+      </app-input>
+    </div>
+
+    <div class="form-section">
+      <app-textarea
+        label="System Prompt (Personalidad)"
+        placeholder="Define la personalidad base del personaje..."
+        variant="primary"
+        [(value)]="systemPrompt">
+      </app-textarea>
+    </div>
+
+    <div class="form-section">
+      <app-input
+        label="Mensaje de bienvenida"
+        placeholder="It's me, Mario!"
+        variant="primary"
+        [(value)]="greetingMessage">
+      </app-input>
+    </div>
+
+    <div class="form-section">
+      <app-slider
+        label="Temperatura (Creatividad)"
+        [value]="temperature"
+        [min]="0"
+        [max]="2"
+        [step]="0.1"
+        textInit="Preciso"
+        textEnd="Creativo"
+        variant="primary"
+        icon="fas fa-temperature-half"
+        leyend="Ajusta el nivel de creatividad e imprevisibilidad del personaje."
+        (valueChange)="onTemperatureChange($event)">
+      </app-slider>
+    </div>
+  </div>
+
+  <footer class="form-actions">
+    <app-button [label]="'Cancelar'" variant="secondary" (click)="cancel()"></app-button>
+    <app-button [label]="'Crear Personaje'" variant="primary" (click)="confirmCreation()"></app-button>
+  </footer>
+</div>
+
+<app-toast></app-toast>
+
+<app-modal
+  [isOpen]="isModalOpen"
+  title="Confirmar Creación"
+  confirmText="Sí, crear"
+  cancelText="Cancelar"
+  (confirm)="createCharacter()"
+  (cancel)="isModalOpen = false"
+  (closeEvent)="isModalOpen = false">
+  <p>¿Estás seguro de que deseas crear al personaje <strong>{{ name }}</strong>?</p>
+  <p class="modal-hint">Asegúrate de que la personalidad (System Prompt) esté bien definida.</p>
+</app-modal>

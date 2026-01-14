@@ -1,0 +1,137 @@
+.textarea-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.textarea-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.textarea-legend {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #a0a0a0;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.textarea-container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  border-radius: 0.5rem;
+  border: 1px solid #404040;
+  background: #2d2d2d;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+}
+
+.textarea-container:focus-within {
+  border-color: #7c5ce8;
+  box-shadow: 0 0 0 3px rgba(124, 92, 232, 0.1);
+}
+
+.textarea-container:hover {
+  border-color: #505050;
+}
+
+.textarea-field {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.5;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+  resize: vertical;
+  min-height: 80px;
+}
+
+.textarea-field::placeholder {
+  color: #6b6b6b;
+}
+
+.textarea-field:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  resize: none;
+}
+
+.textarea-container:has(.textarea-field:disabled) {
+  background: #252525;
+  opacity: 0.5;
+}
+
+/* Scrollbar styling */
+.textarea-field::-webkit-scrollbar {
+  width: 8px;
+}
+
+.textarea-field::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 4px;
+}
+
+.textarea-field::-webkit-scrollbar-thumb {
+  background: #505050;
+  border-radius: 4px;
+}
+
+.textarea-field::-webkit-scrollbar-thumb:hover {
+  background: #606060;
+}
+
+/* Primary variant styles */
+.textarea-primary .textarea-container {
+  background: #2d2d2d;
+  border-color: #404040;
+}
+
+.textarea-primary .textarea-container:focus-within {
+  border-color: #7c5ce8;
+  box-shadow: 0 0 0 3px rgba(124, 92, 232, 0.1);
+}
+
+/* Secondary variant styles */
+.textarea-secondary .textarea-container {
+  background: #3a3a3a;
+  border-color: #505050;
+}
+
+.textarea-secondary .textarea-container:focus-within {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.1);
+}
+
+/* Error state */
+.textarea-wrapper.textarea-error .textarea-container {
+  border-color: #ef4444;
+}
+
+.textarea-wrapper.textarea-error .textarea-container:focus-within {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Success state */
+.textarea-wrapper.textarea-success .textarea-container {
+  border-color: #10b981;
+}
+
+.textarea-wrapper.textarea-success .textarea-container:focus-within {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
